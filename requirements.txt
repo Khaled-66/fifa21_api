@@ -1,2 +1,3 @@
-Flask==3.0.3
-pandas
+flask==2.3.2
+pandas==2.0.0
+gunicorn==20.1.0
