@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 app = Flask(__name__)
-df = pd.read_csv("players21-data.csv",low_memory=False) 
+df = pd.read_csv("api/players21-data.csv",low_memory=False) 
 players_by_id = df.set_index("ID").to_dict(orient="index") #key: player_id, value: player data
 
 @app.route("/")
