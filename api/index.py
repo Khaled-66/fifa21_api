@@ -16,6 +16,13 @@ def home():
 def get_player(player_id):
     player = players_by_id.get(player_id)
     if player:
-        return jsonify({"id": player_id, **player})
+        return Response(
+            json.dumps({"id": player_id, **player}, indent=2),
+            mimetype='application/json'
+        )
     else:
-        return jsonify({"error": "Player not found"}), 404
+        return Response(
+            json.dumps({"error": "Player not found"}, indent=2),
+            mimetype='application/json',
+            status=404
+        )
