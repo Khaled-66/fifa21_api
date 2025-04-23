@@ -3,8 +3,10 @@ import pandas as pd
 import os
 
 app = Flask(__name__)
-df = pd.read_csv("api/players21-data.csv",low_memory=False) 
-players_by_id = df.set_index("ID").to_dict(orient="index") #key: player_id, value: player data
+
+csv_path = os.path.join(os.path.dirname(__file__), "players21-data.csv")
+df = pd.read_csv(csv_path, low_memory=False)
+players_by_id = df.set_index("ID").to_dict(orient="index")
 
 @app.route("/")
 def home():
@@ -18,5 +20,4 @@ def get_player(player_id):
     else:
         return jsonify({"error": "Player not found"}), 404
 
-if __name__ == "__main__":
-    app.run(debug=True)
+handler = app  # This is what Vercel uses
