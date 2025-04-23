@@ -3,6 +3,7 @@ import pandas as pd
 import os
 
 app = Flask(__name__)
+app.config["JSONIFY_PRETTYPRINT_REGULAR"] = True
 csv_path = os.path.join(os.path.dirname(__file__), "players21-data.csv")
 df = pd.read_csv(csv_path, low_memory=False)
 players_by_id = df.set_index("ID").to_dict(orient="index")
