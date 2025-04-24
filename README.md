@@ -1,28 +1,72 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+# FIFA21 Player Data API
 
-# Flask + Vercel
+A simple, efficient Flask-based REST API for fetching detailed FIFA 21 player data using player IDs. Deployed on [Vercel](https://vercel.com), this API was built out of necessity during a data cleaning and preprocessing task, due to the lack of free, scalable APIs or FIFA data sources that could handle 18,000+ players.
 
-This example shows how to use Flask 3 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+## Why I Built This
 
-## Demo
+While working on a data science project involving the FIFA21 dataset, I needed a reliable way to fetch comprehensive player data for over 18,000 individuals. Existing sources were limited, paid, or incomplete — so I created my own API to serve clean and structured data for each player, one ID at a time.
 
-https://flask-python-template.vercel.app/
+## Features
 
-## How it Works
+- **ID-based lookup**: Get player data via a unique player ID.
+- **78 player attributes**: Each response returns detailed information including stats, physical traits, and skill ratings.
+- **Fast & Lightweight**: Optimized for performance and hosted on Vercel for instant global availability.
+- **Open for use**: Great for personal projects, data science workflows, or analysis pipelines.
 
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
+## API Endpoint
 
-## Running Locally
+GET https://fifa21api.vercel.app/player/{ID}
+
+### Example Request
 
 ```bash
-npm i -g vercel
-vercel dev
-```
+curl https://fifa21api.vercel.app/player/158023
 
-Your Flask application is now available at `http://localhost:3000`.
+Example Response
 
-## One-Click Deploy
+{
+  "ID": 158023,
+  "Name": "L. Messi",
+  "Age": 33,
+  "Nationality": "Argentina",
+  "Overall": 93,
+  ...
+  "Strength": 68,
+  "Aggression": 48
+}
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+> Note: The response includes a total of 78 variables per player.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+
+
+Tech Stack
+
+Backend: Python, Flask
+
+Deployment: Vercel
+
+Data Source: Custom-parsed from FIFA21 dataset
+
+
+Use Cases
+
+Machine Learning preprocessing
+
+Data cleaning and feature engineering
+
+Sports analytics
+
+Football player stat lookups
+
+
+Future Improvements
+
+Bulk ID requests
+
+Pagination & filtering
+
+Player name-based search
+
+Swagger/OpenAPI documentation
+
+
