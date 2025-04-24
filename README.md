@@ -1,4 +1,4 @@
-# FIFA21 Player Data API
+# FIFA21 API
 
 A simple, efficient Flask-based REST API for fetching detailed FIFA 21 player data using player IDs. Deployed on [Vercel](https://vercel.com), this API was built out of necessity during a data cleaning and preprocessing task, due to the lack of free, scalable APIs or FIFA data sources that could handle 18,000+ players.
 
