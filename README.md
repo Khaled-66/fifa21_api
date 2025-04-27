@@ -35,38 +35,3 @@ Example Response
   "Aggression": 48
 }
 
-> Note: The response includes a total of 78 variables per player.
-
-
-
-Tech Stack
-
-Backend: Python, Flask
-
-Deployment: Vercel
-
-Data Source: Custom-parsed from FIFA21 dataset
-
-
-Use Cases
-
-Machine Learning preprocessing
-
-Data cleaning and feature engineering
-
-Sports analytics
-
-Football player stat lookups
-
-
-Future Improvements
-
-Bulk ID requests
-
-Pagination & filtering
-
-Player name-based search
-
-Swagger/OpenAPI documentation
-
-
